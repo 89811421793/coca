@@ -1,0 +1,28 @@
+{
+    "extends": [
+        "stylelint-config-standard-scss",
+        "stylelint-config-recess-order",
+        "stylelint-config-prettier-scss"
+    ],
+    "plugins": ["stylelint-order"],
+    "ignoreFiles": [
+        "**/*.js",
+        "**/*.md",
+        "**/*.json",
+        ".eslintrc.cjs",
+        "./src/assets/scss/base/normalize.scss"
+    ],
+    "rules": {
+        "declaration-empty-line-before": "never",
+        "media-feature-range-notation": null,
+        "order/order": [
+            "custom-properties",
+            "dollar-variables",
+            {
+                "type": "at-rule",
+                "name": "include",
+                "hasBlock": false
+            }
+        ]
+    }
+}
