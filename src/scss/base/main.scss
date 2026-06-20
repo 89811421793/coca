@@ -18,9 +18,6 @@ html {
     color: var(--neutral-color-100);
     background-color: var(--neutral-color-10);
 
-    //test background:
-    background-color: aquamarine;
-
     &--fixed {
         overflow-y: hidden;
     }
@@ -42,11 +39,6 @@ p,
 ul,
 ol {
     margin: 0;
-}
-
-//test text-color:
-h1 {
-    color: red;
 }
 
 input {
