@@ -5,6 +5,7 @@ import { ViteMinifyPlugin } from 'vite-plugin-minify';
 
 export default defineConfig({
     root: './src',
+    base: '/cocosite/',
 
     server: {
         port: 3000,
@@ -17,6 +18,8 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: './src/index.html',
+                pricing: './src/pricing.html',
+                contact: './src/contact.html',
             },
         },
     },
