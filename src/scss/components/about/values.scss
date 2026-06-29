@@ -1,0 +1,197 @@
+@use '../../mixins' as *;
+
+.values {
+    &__slider {
+        position: relative;
+        width: 100%;
+        margin-bottom: 120px;
+
+        @include mobile {
+            margin-bottom: 50px;
+        }
+
+        .values__slide {
+            flex-shrink: 0;
+            height: auto;
+
+            &--workspace,
+            &--side {
+                width: 100%;
+                max-width: 450px;
+            }
+
+            &--content {
+                width: 100%;
+                max-width: 582px;
+            }
+
+            @include mobile {
+                max-width: 100%;
+                width: 100%;
+                padding: 0 16px;
+            }
+        }
+    }
+
+    &__img-wrapper {
+        width: 100%;
+        height: 450px;
+
+        @include mobile {
+            height: 300px;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__body {
+        @include flex-column;
+        margin-top: 32px;
+        flex-grow: 1;
+
+        @include mobile {
+            align-items: center;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+        color: var(--neutral-color-100);
+    }
+
+    &__descr {
+        margin-bottom: 24px;
+        font-weight: 500;
+        line-height: 1.7;
+        color: var(--neutral-color-150);
+
+        @include mobile {
+            max-width: 100%;
+            width: 100%;
+            padding: 0 8px;
+        }
+    }
+
+    &__btn {
+        @include flex-align-center;
+        align-self: flex-start;
+        margin-top: auto;
+        gap: 8px;
+        padding: 16px 34px;
+        background-color: var(--neutral-color-100);
+        color: var(--neutral-color-10);
+        border-radius: 100px;
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        @include mobile {
+            align-self: center;
+        }
+    }
+
+    &__btn-arrow {
+        flex-shrink: 0;
+    }
+
+    &__divider-btn {
+        @include flex-all-center;
+        position: absolute;
+        top: 20%;
+        left: 39%;
+        z-index: var(--z-index-2);
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        background-color: #fff;
+        transform: translateX(-50%);
+
+        @include tablet {
+            display: none;
+        }
+
+        @include small-mobile {
+            top: 40%;
+            left: 80%;
+            display: flex;
+            width: 50px;
+            height: 50px;
+            transform: none;
+            box-shadow: none;
+        }
+    }
+
+    &__promo {
+        @include flex-all-between;
+        margin-bottom: 160px;
+        padding: 80px 0;
+        border-top: 1px solid var(--neutral-color-40);
+        border-bottom: 1px solid var(--neutral-color-40);
+
+        @include tablet {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 80px;
+            padding: 48px 0;
+        }
+
+        @include mobile {
+            margin-bottom: 60px;
+            padding: 40px 0;
+            gap: 24px;
+        }
+    }
+
+    &__slogan {
+        max-width: 500px;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        color: var(--neutral-color-100);
+
+        @include tablet {
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__text {
+        max-width: 500px;
+        font-weight: 600;
+        line-height: 1.5;
+        color: var(--neutral-color-100);
+
+        @include tablet {
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+[data-theme='dark'] {
+    .values__promo {
+        border-color: var(--neutral-color-100);
+    }
+
+    .values__btn {
+        background-color: transparent;
+        color: var(--neutral-color-100);
+        padding: 0;
+
+        &:hover {
+            background-color: transparent;
+            opacity: 0.8;
+        }
+    }
+}

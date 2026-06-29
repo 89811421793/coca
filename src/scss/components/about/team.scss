@@ -1,0 +1,276 @@
+@use '../../mixins' as *;
+
+.team {
+    margin-bottom: 80px;
+
+    @include tablet {
+        margin-bottom: 60px;
+    }
+
+    @include mobile {
+        margin-bottom: 40px;
+    }
+
+    &__header {
+        margin-bottom: 64px;
+        max-width: 800px;
+
+        @include tablet {
+            margin-bottom: 40px;
+        }
+
+        @include mobile {
+            margin-bottom: 32px;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        margin-bottom: 56px;
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        line-height: 1.2;
+        color: var(--neutral-color-100);
+
+        @include tablet {
+            margin-bottom: 32px;
+        }
+
+        @include mobile {
+            margin-bottom: 16px;
+            margin-inline: auto;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 80px;
+        max-width: 534px;
+        font-weight: 500;
+        line-height: 1.7;
+        color: var(--neutral-color-150);
+
+        @include tablet {
+            margin-bottom: 48px;
+        }
+
+        @include mobile {
+            margin-bottom: 32px;
+            margin-inline: auto;
+        }
+    }
+
+    &__slider {
+        position: relative;
+        width: 100%;
+        margin-bottom: 100px;
+
+        @include tablet {
+            margin-bottom: 60px;
+        }
+
+        @include mobile {
+            margin-bottom: 40px;
+        }
+
+        .swiper-slide {
+            flex-shrink: 0;
+            height: auto;
+            max-width: 379px;
+            @include flex-column;
+
+            @include tablet {
+                max-width: 320px;
+            }
+
+            @include mobile {
+                max-width: 280px;
+            }
+        }
+    }
+
+    &__divider-btn {
+        @include flex-all-center;
+        position: absolute;
+        top: 20%;
+        left: 33%;
+        z-index: var(--z-index-2);
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        background-color: #fff;
+        transform: translateX(-50%);
+
+        @include tablet {
+            display: none;
+        }
+
+        @include small-mobile {
+            top: 40%;
+            left: 80%;
+            display: flex;
+            width: 50px;
+            height: 50px;
+            transform: none;
+            box-shadow: none;
+        }
+    }
+
+    &__footer {
+        @include flex-all-between;
+
+        @include tablet {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 32px;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &__footer-title {
+        max-width: 574px;
+        font-size: 56px;
+        letter-spacing: -0.04em;
+        color: var(--neutral-color-100);
+
+        @include mini-desktop {
+            font-size: 46px;
+        }
+
+        @include tablet {
+            font-size: 38px;
+            max-width: 100%;
+        }
+
+        @include mobile {
+            font-size: 28px;
+        }
+    }
+
+    &__footer-content {
+        max-width: 474px;
+        margin-top: 14px;
+
+        @include tablet {
+            margin-top: 0;
+            max-width: 100%;
+        }
+    }
+
+    &__footer-text {
+        margin-bottom: 24px;
+        font-weight: 500;
+        line-height: 178%;
+        color: var(--neutral-color-150);
+    }
+
+    &__footer-link {
+        font-weight: 600;
+        color: var(--neutral-color-100);
+        line-height: 150%;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.team-card {
+    width: 100%;
+    @include flex-column;
+    flex-grow: 1;
+
+    &__image-wrapper {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: 521px;
+        object-fit: cover;
+
+        @include tablet {
+            height: 440px;
+        }
+
+        @include mobile {
+            height: 360px;
+        }
+    }
+
+    &__meta {
+        @include flex-all-between;
+        margin-top: 24px;
+        align-items: flex-start;
+
+        @include mobile {
+            margin-top: 16px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 16px;
+            align-self: center;
+        }
+    }
+
+    &__info {
+        @include flex-column;
+        gap: 8px;
+    }
+
+    &__name {
+        font-weight: 600;
+        line-height: 150%;
+        color: var(--neutral-color-100);
+    }
+
+    &__role {
+        font-weight: 500;
+        line-height: 150%;
+        color: var(--neutral-color-150);
+    }
+
+    &__socials {
+        @include flex-align-center;
+        gap: 12px;
+    }
+
+    &__social-link {
+        @include flex-all-center;
+        text-decoration: none;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background-color: var(--neutral-color-20);
+        color: var(--neutral-color-100);
+        transition:
+            background-color var(--transition),
+            color var(--transition);
+
+        svg {
+            width: 16px;
+            height: 13px;
+
+            path {
+                fill: currentColor;
+            }
+        }
+
+        &:hover {
+            background-color: var(--neutral-color-100);
+            color: var(--neutral-color-10);
+        }
+    }
+}
+
+[data-theme='dark'] {
+    .team-card__social-link {
+        background-color: #2c2d3a;
+    }
+}

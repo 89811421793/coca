@@ -1,0 +1,11 @@
+import '/scss/about.scss';
+
+// components
+import { useTheme } from './components/theme.js';
+import { useBurger } from './components/burger.js';
+import { useValueSlider, useTeamSlider } from './components/about/slider.js';
+
+useTheme();
+useBurger();
+useValueSlider();
+useTeamSlider();
