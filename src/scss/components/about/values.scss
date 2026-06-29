@@ -43,10 +43,8 @@
     }
 
     &__img {
-        display: block;
         width: 100%;
         height: 100%;
-        object-fit: cover;
     }
 
     &__body {
@@ -127,8 +125,6 @@
             display: flex;
             width: 50px;
             height: 50px;
-            transform: none;
-            box-shadow: none;
         }
     }
 

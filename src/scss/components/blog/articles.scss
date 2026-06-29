@@ -104,6 +104,7 @@
         @include small-tablet {
             grid-template-columns: 1fr;
             gap: 32px;
+            justify-items: center;
         }
     }
 }
@@ -111,6 +112,10 @@
 .article-card {
     @include flex-column;
     width: 100%;
+
+    @include small-tablet {
+        max-width: 90%;
+    }
 
     &__image-wrapper {
         width: 100%;
@@ -120,16 +125,15 @@
     }
 
     &__image {
-        display: block;
         width: 100%;
         height: 100%;
-        object-fit: cover;
     }
 
     &__content {
         @include flex-column;
         align-items: flex-start;
         flex-grow: 1;
+        width: 100%;
     }
 
     &__title {
@@ -187,7 +191,7 @@
 
             &--next {
                 background-color: var(--neutral-color-40);
-                border-color: var(--neutral-color-40);
+                border-color: var(--neutral-color-400);
 
                 svg path {
                     fill: var(--neutral-color-60);

@@ -55,8 +55,6 @@
     }
 
     &__link {
-        flex-shrink: 0;
-
         @include tablet {
             align-self: center;
         }
