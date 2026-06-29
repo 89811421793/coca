@@ -1,0 +1,47 @@
+@use '../../mixins' as *;
+
+.hero {
+    &__content {
+        @include tablet {
+            @media (max-width: 992px) {
+                text-align: center;
+
+                .hero__title {
+                    text-align: center;
+                }
+
+                .hero__subtitle {
+                    text-align: center;
+                    padding-left: 0;
+                    margin: 0 auto 100px;
+                }
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 55px;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.04em;
+        color: var(--neutral-color-100);
+    }
+
+    &__subtitle {
+        position: relative;
+        padding-left: 100px;
+        margin-bottom: 120px;
+        max-width: 738px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 76px;
+            height: 1px;
+            background-color: var(--neutral-color-100);
+            transform: translateY(-50%);
+        }
+    }
+}

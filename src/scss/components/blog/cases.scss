@@ -1,0 +1,66 @@
+@use '../../mixins' as *;
+
+.blog-cases {
+    padding: 80px 0;
+    background-color: var(--black-bg-color);
+    color: #fff;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 30px;
+        align-items: start;
+
+        .blog-cases__card:nth-child(3),
+        .blog-cases__card:nth-child(4) {
+            align-self: end;
+        }
+    }
+}
+
+.case-card {
+    @include flex-column;
+    width: 100%;
+
+    &__image-wrapper {
+        width: 100%;
+        background-color: var(--neutral-color-60);
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__content {
+        @include flex-column;
+        margin-top: 24px;
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: -0.02em;
+
+        a {
+            color: #fff;
+            transition: color var(--transition);
+        }
+    }
+
+    &__description {
+        font-weight: 500;
+        line-height: 178%;
+        color: var(--neutral-color-150);
+    }
+
+    &--horizontal {
+        .case-card__title {
+            a {
+                text-decoration: underline;
+                text-underline-offset: 6px;
+            }
+        }
+    }
+}

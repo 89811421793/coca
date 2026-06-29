@@ -1,0 +1,198 @@
+@use '../../mixins' as *;
+
+.blog-articles {
+    padding: 80px 0;
+    background-color: var(--neutral-color-10);
+
+    @include tablet {
+        padding: 60px 0;
+    }
+
+    @include mobile {
+        padding: 40px 0;
+    }
+
+    &__header {
+        @include flex-all-between;
+        margin-bottom: 64px;
+        width: 100%;
+
+        @include tablet {
+            margin-bottom: 40px;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+    }
+
+    &__caption {
+        @include flex-column;
+        max-width: 450px;
+
+        @include small-tablet {
+            text-align: center;
+        }
+
+        @include mobile {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 25px;
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: -0.04em;
+        color: var(--neutral-color-100);
+
+        @include mobile {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__subtitle {
+        font-weight: 500;
+        line-height: 178%;
+        color: var(--neutral-color-150);
+    }
+
+    &__nav {
+        @include flex-align-center;
+        gap: 16px;
+
+        @include small-tablet {
+            align-self: center;
+        }
+    }
+
+    &__nav-btn {
+        @include flex-all-center;
+        padding: 0;
+        cursor: pointer;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        transition:
+            background-color var(--transition),
+            border-color var(--transition);
+
+        svg {
+            display: block;
+        }
+
+        &--prev {
+            background-color: var(--neutral-color-10);
+            border: 1px solid var(--neutral-color-30);
+        }
+
+        &--next {
+            background-color: var(--neutral-color-60);
+            border: 1px solid var(--neutral-color-60);
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 30px;
+        align-items: start;
+
+        @include small-tablet {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+    }
+}
+
+.article-card {
+    @include flex-column;
+    width: 100%;
+
+    &__image-wrapper {
+        width: 100%;
+        margin-bottom: 32px;
+        background-color: var(--neutral-color-20);
+        aspect-ratio: 360 / 240;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__content {
+        @include flex-column;
+        align-items: flex-start;
+        flex-grow: 1;
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 130%;
+        color: var(--neutral-color-100);
+        letter-spacing: -0.02em;
+    }
+
+    &__description {
+        margin-bottom: 24px;
+        font-weight: 500;
+        line-height: 178%;
+        color: var(--neutral-color-150);
+    }
+
+    &__link {
+        @include flex-all-center;
+        padding: 16px 45px;
+        font-weight: 700;
+        line-height: 150%;
+        color: var(--neutral-color-100);
+        border: 1px solid var(--neutral-color-40);
+        border-radius: 100px;
+        transition:
+            background-color var(--transition),
+            color var(--transition),
+            border-color var(--transition);
+
+        &:hover {
+            background-color: var(--neutral-color-100);
+            border-color: var(--neutral-color-100);
+            color: var(--neutral-color-10);
+        }
+
+        @include small-tablet {
+            width: 100%;
+        }
+    }
+}
+
+[data-theme='dark'] {
+    .blog-articles {
+        &__nav-btn {
+            &--prev {
+                background-color: var(--neutral-color-100);
+                border-color: var(--neutral-color-100);
+
+                svg path {
+                    fill: var(--neutral-color-10);
+                }
+            }
+
+            &--next {
+                background-color: var(--neutral-color-40);
+                border-color: var(--neutral-color-40);
+
+                svg path {
+                    fill: var(--neutral-color-60);
+                }
+            }
+        }
+    }
+}
